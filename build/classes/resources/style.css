@@ -1,0 +1,28 @@
+
+#nameLabel{
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #008080;
+    -fx-alignment: center;
+}
+
+#questionLabel{
+    -fx-font-size: 20px;
+    -fx-text-fill: #008080;
+    -fx-alignment: center;
+}
+
+#historyLabel{
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #008080;
+    -fx-alignment: center;
+}
+
+.label{
+    -fx-font-size: 25px;
+}
+
+.root{
+    -fx-background-color: #fff5ee;
+}

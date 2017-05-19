@@ -37,16 +37,22 @@ public class AdminHome {
         HBox cbox = new HBox(10);
         cbox.setAlignment(Pos.CENTER);
         cbox.getChildren().add(createButton);
-        AdminGrid.add(cbox,0,2);
+        AdminGrid.add(cbox,0,0);
         
         Button resetButton = new Button("Reset Account");
         HBox rbox = new HBox(10);
         rbox.setAlignment(Pos.CENTER);
         rbox.getChildren().add(resetButton);
-        AdminGrid.add(rbox,0,4);
+        AdminGrid.add(rbox,0,2);
+        
+        //Button logoutButton = new Button("Logout");
+        //AdminGrid.add(logoutButton, 0, 0);
         
         Button logoutButton = new Button("Logout");
-        AdminGrid.add(logoutButton, 0, 0);
+        HBox lbox = new HBox(10);
+        lbox.setAlignment(Pos.CENTER);
+        lbox.getChildren().add(logoutButton);
+        AdminGrid.add(lbox,0,4);
         
         
         createButton.setOnAction((ActionEvent event) -> {

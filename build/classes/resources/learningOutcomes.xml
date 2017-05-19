@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+    <category name="programming">
+        <learningoutcomes>
+            <lo>c++</lo>
+            <lo>java</lo>
+            <lo>python</lo>
+        </learningoutcomes>
+        
+    </category>
+    
+    <category name="data structures">
+        <learningoutcomes>
+            <lo>trees</lo>
+            <lo>sorting</lo>
+            <lo>searching</lo>
+            <lo>heaps</lo>
+            <lo>stacks</lo>
+        </learningoutcomes>
+    </category>
+    
+    <category name="software engineering">
+        <learningoutcomes>
+            <lo>work flow</lo>
+            <lo>testing</lo>
+        </learningoutcomes>
+    </category>
+    
+    <category name="data analysis">
+        <learningoutcomes>
+            <lo>latent semantic analysis</lo>
+            <lo>natural language processing</lo>
+            <lo>parts of speech tagging</lo>
+        </learningoutcomes>
+    </category>
+    
+    <category name="cloud computing">
+        <learningoutcomes>
+            <lo>map reduce</lo>
+            <lo>hadoop</lo>
+        </learningoutcomes>
+    </category>
+</root>

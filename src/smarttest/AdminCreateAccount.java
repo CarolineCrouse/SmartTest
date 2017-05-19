@@ -67,6 +67,23 @@ public class AdminCreateAccount {
         cbox.getChildren().add(createButton);
         AdminGrid.add(cbox,1,10);
         
+        //button
+        Button backButton = new Button("Go Back");
+        HBox bbox = new HBox(10);
+        bbox.setAlignment(Pos.CENTER);
+        bbox.getChildren().add(backButton);
+        AdminGrid.add(bbox,0,10);
+        
+        //back button action
+        backButton.setOnAction((ActionEvent event) -> {
+            Stage tempStage = new Stage();
+            Scene scene = AdminHome.setScene();
+            tempStage.setScene(scene);
+            tempStage.show();            
+            Stage st = (Stage)backButton.getScene().getWindow();
+            st.close();
+        });
+        
         createButton.setOnAction((ActionEvent event) -> {
             User newUser;
             //creates new user depending on input Account Type
