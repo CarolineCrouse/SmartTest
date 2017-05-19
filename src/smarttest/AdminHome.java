@@ -37,13 +37,16 @@ public class AdminHome {
         HBox cbox = new HBox(10);
         cbox.setAlignment(Pos.CENTER);
         cbox.getChildren().add(createButton);
-        AdminGrid.add(cbox,0,0);
+        AdminGrid.add(cbox,0,2);
         
         Button resetButton = new Button("Reset Account");
         HBox rbox = new HBox(10);
         rbox.setAlignment(Pos.CENTER);
         rbox.getChildren().add(resetButton);
-        AdminGrid.add(rbox,0,2);
+        AdminGrid.add(rbox,0,4);
+        
+        Button logoutButton = new Button("Logout");
+        AdminGrid.add(logoutButton, 0, 0);
         
         
         createButton.setOnAction((ActionEvent event) -> {
@@ -64,6 +67,17 @@ public class AdminHome {
             
             Stage s = (Stage)resetButton.getScene().getWindow();
             s.close();
+        });
+        
+        //setting up action for logout button
+        logoutButton.setOnAction((ActionEvent event) -> {
+            Stage tempStage = new Stage();
+            Scene scene = LoginPage.setScene();
+            tempStage.setScene(scene);
+            tempStage.show();
+            
+            Stage st = (Stage)logoutButton.getScene().getWindow();
+            st.close();
         });
         
         //Scenes     

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Separator;
@@ -40,6 +41,11 @@ public class ViewTest {
                 
                 Label testPointsLabel = new Label("Total Points " + test.totalPoints);
                 box.getChildren().add(testPointsLabel);
+                
+                //this button is for viewing students who took test
+                Button viewStudentsButton = new Button("View Students");
+
+                
                 
                 ScrollPane pane = new ScrollPane();
                 for(int i = 0; i<questions.size(); i++){

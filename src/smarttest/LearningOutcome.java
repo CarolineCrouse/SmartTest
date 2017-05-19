@@ -12,4 +12,9 @@ package smarttest;
 public class LearningOutcome implements java.io.Serializable{
     String name;
     String category;
+    
+    public LearningOutcome(){
+        name = "";
+        category = "";
+    }
 }

@@ -5,6 +5,11 @@
  */
 package smarttest;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *  This class will have all the server methods
  */
@@ -37,7 +42,25 @@ public class CentralServerAdapter {
             case "resetPassword" :
                 System.out.println(resetPassword(args[1]));
                 break;
+            case "uploadLearningOutcomes" :
+                System.out.println(updateLO(args[1]));
+                break;
+            case "getLearningOutcomes" :
+                System.out.println(getLO());
+                break;
         }
+    }
+    
+    protected static String getLO(){   
+        String qry = "SELECT byteStr FROM learningOutcomes";
+        String objStr = Utils.execQuery(qry);
+        return objStr;
+    }
+    
+    protected static String updateLO(String loString){
+        String qry = "UPDATE learningOutcomes SET byteStr='"+loString+"'";
+        Utils.execNonQuery(qry);
+        return "Success!";
     }
     
     protected static String updateTest(String testString, String pincode){
@@ -90,6 +113,11 @@ public class CentralServerAdapter {
             tempUser.Password = "csc190";
             
             String str = Utils.toStr(tempUser);
+            try {
+                str = URLDecoder.decode(str, "UTF-8");
+            } catch (UnsupportedEncodingException ex) {
+                System.out.println(ex);
+            }
             
             String qry1 = "UPDATE users SET password='csc190', byteStr='" + str + "' WHERE uname='"+username+"'";
             Utils.execNonQuery(qry1);

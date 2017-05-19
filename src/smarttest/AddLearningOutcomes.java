@@ -22,12 +22,12 @@ import javafx.stage.Stage;
  * @author arslanwaheed
  */
 public class AddLearningOutcomes {
-    public static Scene setScene(Question question){
+    public static Scene setScene(Question question, LearningOutcomesArray learningOutcomes){
         VBox box = new VBox();
         ScrollPane scroll = new ScrollPane();
         
-        LearningOutcomesArray learningOutcomes = new LearningOutcomesArray();
-        learningOutcomes.ReadLearningOutcomes();
+        //LearningOutcomesArray learningOutcomes = new LearningOutcomesArray();
+        //learningOutcomes.ReadLearningOutcomes();
         
         int size = learningOutcomes.loArray.size();
         String prevCategory = "";

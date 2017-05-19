@@ -29,11 +29,11 @@ public class TeacherHome {
         Label nameLabel = new Label(t.FirstName+" " + t.LastName);
         nameLabel.setId("nameLabel");
         nameLabel.autosize();
-        grid.add(nameLabel, 25, 0,30,1);
+        grid.add(nameLabel, 15, 0,30,1);
         
         //adding logout button
         Button logoutButton = new Button("Logout");
-        grid.add(logoutButton, 60,0);
+        grid.add(logoutButton, 50,0);
         
         //setting up action for logout button
         logoutButton.setOnAction((ActionEvent event) -> {
@@ -53,9 +53,23 @@ public class TeacherHome {
         Separator separator2 = new Separator();  
         grid.add(separator2,0, 2, 67,1);
         
+        
         //add create test button
         Button newTest = new Button("Create Test");
-        grid.addRow(3, newTest);
+        grid.addRow(4, newTest);
+        
+        //add learning outcomes
+        Button uploadLOButton = new Button("Upload Learning Outcomes");
+        grid.addRow(3, uploadLOButton);
+        
+        uploadLOButton.setOnAction((ActionEvent event) -> {
+            Scene uploadLOScene = UploadLearningOutcomes.setScene();
+            
+            Stage tempStage = new Stage();
+            tempStage.setTitle("Uload Learning Outcomes");
+            tempStage.setScene(uploadLOScene);
+            tempStage.showAndWait();
+        });
         
         //setting up action for create test button
         newTest.setOnAction((ActionEvent event) -> {
@@ -69,13 +83,13 @@ public class TeacherHome {
         
         //add a separator
         Separator separator3 = new Separator();  
-        grid.add(separator3,0, 4, 67,1);
+        grid.add(separator3,0, 5, 67,1);
         
         //adding Test History label
         Label historyLabel = new Label("Test History");
         historyLabel.setId("historyLabel");
         historyLabel.autosize();
-        grid.add(historyLabel, 25, 5,30,1);
+        grid.add(historyLabel, 15, 6,30,1);
         box.getChildren().add(grid);
         
         //get all tests and display them

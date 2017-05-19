@@ -7,6 +7,8 @@ package smarttest;
 
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -86,8 +88,24 @@ public class CreateQuestion {
                 q.options.add(options.get(i).getText());
             }
             
+            String url = "http://10.22.13.87/SmartTestDB.php";
+            String datastr = "op=getLearningOutcomes";
+            String response = null;
+            try {
+                response = Utils.httpsPost(url, datastr);
+            } catch (Exception ex) {
+                Logger.getLogger(CreateQuestion.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            LearningOutcomesArray learningOutcomes = new LearningOutcomesArray();
+            
+            if(response != null){
+                response = response.substring(0, response.length() - 1);
+                learningOutcomes = (LearningOutcomesArray)Utils.toObj(response);
+            }
+            
             Stage tempStage = new Stage();
-            Scene tempScene = AddLearningOutcomes.setScene(q);
+            Scene tempScene = AddLearningOutcomes.setScene(q,learningOutcomes);
             tempStage.setScene(tempScene);
             tempStage.showAndWait();
             
